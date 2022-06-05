@@ -1,0 +1,22 @@
+{
+    "about": {
+        "aboutUs": "O nás",
+        "appStore": "App Store",
+        "appStoreLink": "https://apps.apple.com/app/cf-hero/id1539224853",
+        "appVersion": "Verzia aplikácie",
+        "checkUpdates": "Skontroluj, či máš updatovanú verziu:",
+        "fbLink": "https://www.facebook.com/CFHeroApp/",
+        "igLink": "https://www.instagram.com/cfheroapp/",
+        "moreInfo": "Pre viac informácií mrkni na náš web.",
+        "moreInfoButton": "Viac info",
+        "moreInfoLink": "https://cfhero.org",
+        "partners": "Partneri",
+        "playStore": "Play Store",
+        "playStoreLink": "https://play.google.com/store/apps/details?id=org.cfhero2.android",
+        "stayInTouch": "Buď v obraze a sleduj CF Hero:",
+        "title": "O Aplikácii"
+    },
+    "addDeviceForm": {
+        "youCanNameIt": "Môžeš si ho pomenovať"
+    }
+}

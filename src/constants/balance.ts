@@ -1,0 +1,1 @@
+export const GIFTED_OXYGEN_AMOUNT = 200;

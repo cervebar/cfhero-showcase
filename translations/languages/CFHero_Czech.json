@@ -1,0 +1,18 @@
+[
+    {
+        "term": "adultAge__value",
+        "definition": "15",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": "D\u00e1t pozor, na Slovensku jeto 16 let"
+    },
+    {
+        "term": "wizardAvatar__title",
+        "definition": "Jsi kluk? Nebo holka?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    }
+]

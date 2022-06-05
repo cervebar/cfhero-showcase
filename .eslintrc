@@ -1,0 +1,15 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "prettier",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "react-native/no-inline-styles": 0,
+    "curly": ["error", "multi-line"],
+    "linebreak-style": "off"
+  },
+  "extends": "@react-native-community"
+}

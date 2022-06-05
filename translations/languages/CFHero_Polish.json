@@ -1,0 +1,17 @@
+[
+    {
+        "term": "adultAge__value",
+        "definition": "16",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": "D\u00e1t pozor, na Slovensku jeto 16 let"
+    },
+    {
+        "term": "wizardAvatar__title",
+        "definition": "Jeste\u015b ch\u0142opakiem czy dziewczyn\u0105?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    } ,...

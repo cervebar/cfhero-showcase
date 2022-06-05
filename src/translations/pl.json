@@ -1,0 +1,22 @@
+{
+    "about": {
+        "aboutUs": "O nas",
+        "appStore": "App Store",
+        "appStoreLink": "https://apps.apple.com/app/cf-hero/id1539224853",
+        "appVersion": "Wersja aplikacji",
+        "checkUpdates": "Sprawdź, czy masz aktualną wersję:",
+        "fbLink": "https://www.facebook.com/CFHeroApp/",
+        "igLink": "https://www.instagram.com/cfheroapp/",
+        "moreInfo": "Więcej informacji znajdziesz na naszej stronie",
+        "moreInfoButton": "WIĘCEJ INFO",
+        "moreInfoLink": "https://cfhero.org/pl/home-pl/",
+        "partners": "Partnerzy",
+        "playStore": "Play Store",
+        "playStoreLink": "https://play.google.com/store/apps/details?id=org.cfhero2.android",
+        "stayInTouch": "Bądź na bieżąco i obserwuj CF Hero: ",
+        "title": "O Aplikacji"
+    },
+    "addDeviceForm": {
+        "youCanNameIt": "Możesz go nazwać"
+    }
+}

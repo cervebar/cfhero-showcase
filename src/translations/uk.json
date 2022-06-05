@@ -1,0 +1,22 @@
+{
+    "about": {
+        "aboutUs": "Про нас",
+        "appStore": "App Store",
+        "appStoreLink": "https://apps.apple.com/app/cf-hero/id1539224853",
+        "appVersion": "Версія застосунку",
+        "checkUpdates": "Перевір, чи у тебе остання версія:",
+        "fbLink": "https://www.facebook.com/CFHeroApp/",
+        "igLink": "https://www.instagram.com/cfheroapp/",
+        "moreInfo": "Щоб дізнатися подробиці глянь на наш сайт",
+        "moreInfoButton": "Подробиці",
+        "moreInfoLink": "https://cfhero.org/ua/ua-home/",
+        "partners": "Партнери",
+        "playStore": "Play Store",
+        "playStoreLink": "https://play.google.com/store/apps/details?id=org.cfhero2.android",
+        "stayInTouch": "Будь у курсі і підписуйся на CF Hero:",
+        "title": "Про застосунок"
+    },
+    "addDeviceForm": {
+        "youCanNameIt": "Ви можете назвати його"
+    }
+}

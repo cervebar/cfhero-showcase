@@ -1,0 +1,86 @@
+# TODO: We can configure custom docker image, based on androidsdk/android-29 that adds nodeJS, to shorten the Android build duration
+# TODO: Rewrite build script steps into own bash script to reuse the functionality
+
+image: node:lts
+
+clone:
+  lfs: true
+
+definitions:
+  caches:
+    nodecustom: ./node_modules
+    yarn: /usr/local/share/.cache/yarn
+  steps:
+    - step: &dependenciesStep
+        name: Install dependencies
+        caches: &nodeCaches
+          - nodecustom
+          - yarn
+        script:
+          - yarn
+    - step: &lintStep
+        name: Lint
+        caches: *nodeCaches
+        script:
+          - yarn run lint
+    - step: &testStep
+        name: Test
+        caches: *nodeCaches
+        script:
+          - yarn run test --ci
+  buildCaches: &buildCaches
+    - nodecustom
+    - yarn
+    - gradle
+
+pipelines:
+  branches:
+    master:
+      - step: *dependenciesStep
+      - parallel:
+          - step: *lintStep
+          - step: *testStep
+  pull-requests:
+    '**':
+      - step: *dependenciesStep
+      - parallel:
+          - step: *lintStep
+          - step: *testStep
+  custom:
+    build-staging:
+      - step: *dependenciesStep
+      - step:
+          image: mingc/android-build-box:latest
+          name: Build staging and upload to Test Fairy
+          artifacts:
+            - android/app/build/outputs/**
+          caches: *buildCaches
+          script:
+            # TODO: Reusable env variables
+            - echo NODE_ENV=staging >> .env.staging
+            - echo IS_DEVELOP=true >> .env.staging
+            - echo QA=false >> .env.staging
+            - echo "$CF_HERO_KEY_STORE" | base64 -d > cf_hero_key_store
+            - cd android
+            - chmod a+x ./gradlew
+            - ./gradlew bundleStagingRelease
+            - curl https://upload.testfairy.com/api/upload
+              -F api_key="$TEST_FAIRY_API_KEY"
+              -F file=@app/build/outputs/bundle/stagingRelease/app-staging-release.aab
+              -F auto-update=on
+    build-production:
+      - step: *dependenciesStep
+      - step:
+          image: mingc/android-build-box:latest
+          name: Build production and upload to Test Fairy
+          artifacts:
+            - android/app/build/outputs/**
+          caches: *buildCaches
+          script:
+            - echo NODE_ENV=production >> .env.production
+            - echo IS_DEVELOP=false >> .env.production
+            - echo QA=false >> .env.production
+            - echo "$CF_HERO_KEY_STORE" | base64 -d > cf_hero_key_store
+            - cd android
+            - chmod a+x ./gradlew
+            - ./gradlew bundleProductionRelease
